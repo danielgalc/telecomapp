@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->enum('rol', ['CLIENTE', 'SOPORTE', 'TECNICO', 'ADMIN'])->default('CLIENTE');
+            $table->string('direccion')->nullable();
+            $table->string('tlf')->unique()->nullable();
+            $table->string('dni')->unique()->nullable();
         });
     }
 
